@@ -6,9 +6,10 @@ import java.sql.SQLException;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
-public class DBConnect {
+public class DBConnect 
+{
 
-	private static final String jdbcURL = "jdbc:mysql://localhost/ufo_sightings";
+	private static final String jdbcURL = "jdbc:mysql://localhost/ufo_sightings?serverTimezone=Europe/Rome";
 	private static HikariDataSource ds;
 	
 	public static Connection getConnection() {
@@ -17,7 +18,7 @@ public class DBConnect {
 			HikariConfig config = new HikariConfig();
 			config.setJdbcUrl(jdbcURL);
 			config.setUsername("root");
-			config.setPassword("root");
+			config.setPassword("password");
 			
 			// configurazione MySQL
 			config.addDataSourceProperty("cachePrepStmts", "true");
