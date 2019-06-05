@@ -26,7 +26,7 @@ public class UfoController {
     private ComboBox<Integer> boxAnno; // Value injected by FXMLLoader
 
     @FXML // fx:id="boxStato"
-    private ComboBox<?> boxStato; // Value injected by FXMLLoader
+    private ComboBox<String> boxStato; // Value injected by FXMLLoader
 
     @FXML // fx:id="txtResult"
     private TextArea txtResult; // Value injected by FXMLLoader
@@ -34,20 +34,22 @@ public class UfoController {
     private Model model;
 
     @FXML
-    void handleAnalizza(ActionEvent event) {
+    void handleAnalizza(ActionEvent event) 
+    {
+    	model.analizza(boxStato.getSelectionModel().getSelectedItem());
 
     }
 
     @FXML
     void handleAvvistamenti(ActionEvent event) 
     {
-    	model.creaGrafo(boxAnno.getSelectionModel().getSelectedItem());
-
+    	boxStato.getItems().addAll(model.creaGrafo(boxAnno.getSelectionModel().getSelectedItem()));
     }
 
     @FXML
-    void handleSequenza(ActionEvent event) {
-
+    void handleSequenza(ActionEvent event) 
+    {
+    	model.calcolaSequenza(boxStato.getSelectionModel().getSelectedItem());
     }
     
     //forse dovrei metter tutto in cmb

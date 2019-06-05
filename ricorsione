@@ -1,0 +1,16 @@
+Impostazione della ricorsione
+Author: Daniele Genta
+
+-Soluzione: Sequenza (List) di vertici del grafo (stati) presi una sola volta per cui si trova un cammino, 
+obiettivo è trovare il cammino più lungo possibile
+
+-Soluzione  parziale: Sequenza (parziale) di vertici del grafo
+
+-Livello della ricorsione: successori dell'ultimo vertice inserito nella soluzione parziale (?)
+-Terminazione: non c'è (?)
+
+-Come generare nuove soluzioni: provo ad aggiungere uno ad uno alla soluzione parziale i successori dell'ultimo
+vertice inserito nella soluzione stessa, unico vincolo che il vertice non sia già presente nel cammino (no loop)
+
+-Ad ogni soluzione parziale verifico se sia migliore (più lunga) della soluzione ottima finora
+-Soluzione iniziale inizializzata con lo stato di partenza
